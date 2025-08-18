@@ -779,8 +779,8 @@ public class PlayerActivity extends Activity {
                         //if (mPrefs.persistentMode) {
                             //intent.putExtra(API_POSITION, (int) mPrefs.nonPersitentPosition);
                         //} else {
-                            intent.putExtra(API_DURATION, (int) player.getDuration());
                             intent.putExtra(API_POSITION, (int) player.getCurrentPosition());
+                            intent.putExtra(API_DURATION, (int) player.getDuration());
                         //}
                     }
                 }
