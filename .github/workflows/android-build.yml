@@ -4,7 +4,8 @@ on:
   push:
     tags:
       - 'v0.*'
-
+  workflow_dispatch: # Actions 탭에서 수동으로 실행 가능
+  
 jobs:
   build:
     runs-on: ubuntu-latest
