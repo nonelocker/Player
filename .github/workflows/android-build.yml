@@ -1,4 +1,4 @@
-name: Android Build APK
+name: Android Build APK ORG
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
       - run: ./gradlew assembleRelease bundleRelease
           -Pandroid.injected.signing.store.file=${GITHUB_WORKSPACE}/keystore.jks
           -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }}
-          -Pandroid.injected.signing.key.alias=key
+          -Pandroid.injected.signing.key.alias='my-key-alias'
           -Pandroid.injected.signing.key.password=${{ secrets.KEYSTORE_PASSWORD }}
 
       - uses: softprops/action-gh-release@v2
