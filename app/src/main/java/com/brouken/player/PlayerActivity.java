@@ -773,7 +773,7 @@ public class PlayerActivity extends Activity {
                 if (player != null) {
                     long duration = player.getDuration();
                     if (duration != C.TIME_UNSET) {
-                        // intent.putExtra(API_DURATION, (int) player.getDuration());
+                        intent.putExtra(API_DURATION, (int) player.getDuration());
                     }
                     if (player.isCurrentMediaItemSeekable()) {
                         if (mPrefs.persistentMode) {
