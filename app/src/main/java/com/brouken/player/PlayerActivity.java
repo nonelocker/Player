@@ -771,16 +771,20 @@ public class PlayerActivity extends Activity {
             intent.putExtra(API_END_BY, playbackFinished ? "playback_completion" : "user");
             if (!playbackFinished) {
                 if (player != null) {
-                    long duration = player.getDuration();
-                    if (duration != C.TIME_UNSET) {
-                        intent.putExtra(API_DURATION, (int) player.getDuration());
-                    }
+                    long duration = player.getContentDuration()-player.getCurrentPosition();
+                    //if (duration != C.TIME_UNSET) {
+                    //    intent.putExtra(API_DURATION, (int) player.getDuration());
+                    //}
+                    //else
+                    //{
+                        intent.putExtra(API_DURATION, (int)duration );
+                    //}
                     if (player.isCurrentMediaItemSeekable()) {
                         //if (mPrefs.persistentMode) {
                             //intent.putExtra(API_POSITION, (int) mPrefs.nonPersitentPosition);
                         //} else {
                             intent.putExtra(API_POSITION, (int) player.getCurrentPosition());
-                            intent.putExtra(API_DURATION, (int) player.getCurrentPosition()); //(int) player.getDuration());
+                            //intent.putExtra(API_DURATION, ((int) player.getDuration() - (int) player.getCurrentPosition()));
                         //}
                     }
                 }
