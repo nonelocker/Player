@@ -772,7 +772,7 @@ public class PlayerActivity extends Activity {
             if (!playbackFinished) {
                 if (player != null) {
                     long duration = player.getDuration();
-                    if (duration != C.TIME_UNSET) {
+                    if (duration != C.TIME_UNSET || duration > 0) {
                         intent.putExtra(API_DURATION, (int) player.getDuration());
                     }
                     else
