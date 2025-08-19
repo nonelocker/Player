@@ -785,13 +785,13 @@ public class PlayerActivity extends Activity {
                             {
                                 intent.putExtra(API_POSITION, (int) 1000);
                             }
-                            if (duration > 0) {
-                                intent.putExtra(API_DURATION, (int) duration*1000);
-                            }
-                            else
-                            {
-                                intent.putExtra(API_DURATION, (int) player.getContentDuration()*1000 );
-                            }
+                            //if (duration > 0) {
+                            //    intent.putExtra(API_DURATION, (int) duration*1000);
+                            //}
+                            //else
+                            //{
+                            //    intent.putExtra(API_DURATION, (int) player.getContentDuration()*1000 );
+                            //}
                         }
                     }
                 }
