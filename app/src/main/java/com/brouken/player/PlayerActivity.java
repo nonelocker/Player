@@ -774,7 +774,7 @@ public class PlayerActivity extends Activity {
                    if (player.isCurrentMediaItemSeekable()) {
                         if (mPrefs.persistentMode) {
                             intent.putExtra(API_POSITION, (int) mPrefs.nonPersitentPosition);
-                            intent.putExtra(API_DURATION, (int) player.getDuration());
+                            intent.putExtra(API_DURATION, (int) -1); //mplayer.getDuration());
                         } else {
                             long duration = player.getDuration();
                             long position = player.getCurrentPosition();
@@ -787,11 +787,11 @@ public class PlayerActivity extends Activity {
                                 intent.putExtra(API_POSITION, (int) 1000);
                             }
                             if (duration > 0) {
-                                intent.putExtra(API_DURATION, (int) duration+1000);
+                                intent.putExtra(API_DURATION, (int) -1); // duration+1000);
                             }
                             else
                             {
-                                intent.putExtra(API_DURATION, (int) player.getContentDuration());
+                                intent.putExtra(API_DURATION, (int) -1); //player.getContentDuration());
                             }
                         }
                     }
