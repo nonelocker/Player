@@ -789,14 +789,14 @@ public class PlayerActivity extends Activity {
                                 }
                                 else
                                 {
-                                    intent.putExtra(API_POSITION, (int) 1000);
+                                    intent.putExtra(API_POSITION, (int) -position);
                                 }
                                 if (duration > 0) {
-                                    intent.putExtra(API_DURATION, (int) 0); //duration+1000);
+                                    intent.putExtra(API_DURATION, (int) duration);
                                 }
                                 else
                                 {
-                                    intent.putExtra(API_DURATION, (int) 0); //player.getContentDuration());
+                                    intent.putExtra(API_DURATION, (int) -duration);
                                 }                                
                             }
                             else
