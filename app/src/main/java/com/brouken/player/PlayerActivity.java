@@ -778,20 +778,31 @@ public class PlayerActivity extends Activity {
                         } else {
                             long duration = player.getDuration();
                             long position = player.getCurrentPosition();
-                            if( position >= 0)
+                            int progress = -1;
+                            if (position >= 0 && duration > 0 && position <= duration)
+                                progress = (int) (position / (double) duration * 100);
+                            if(progress >=0 && progress < 1)
                             {
-                                intent.putExtra(API_POSITION, (int) position);
+                                if( position >= 0)
+                                {
+                                    intent.putExtra(API_POSITION, (int) position);
+                                }
+                                else
+                                {
+                                    intent.putExtra(API_POSITION, (int) 1000);
+                                }
+                                if (duration > 0) {
+                                    intent.putExtra(API_DURATION, (int) duration+1000);
+                                }
+                                else
+                                {
+                                    intent.putExtra(API_DURATION, (int) player.getContentDuration());
+                                }                                
                             }
                             else
                             {
-                                intent.putExtra(API_POSITION, (int) 1000);
-                            }
-                            if (duration > 0) {
-                                intent.putExtra(API_DURATION, (int) duration+1000);
-                            }
-                            else
-                            {
-                                intent.putExtra(API_DURATION, (int) player.getContentDuration());
+                                intent.putExtra(API_POSITION, (int) 0);
+                                intent.putExtra(API_DURATION, (int) 1);
                             }
                         }
                     }
