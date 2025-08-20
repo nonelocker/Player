@@ -774,7 +774,7 @@ public class PlayerActivity extends Activity {
                    if (player.isCurrentMediaItemSeekable()) {
                         if (mPrefs.persistentMode) {
                             intent.putExtra(API_POSITION, (int) mPrefs.nonPersitentPosition);
-                            intent.putExtra(API_DURATION, (int) mplayer.getDuration());
+                            intent.putExtra(API_DURATION, (int) player.getDuration());
                         } else {
                             long duration = player.getDuration();
                             long position = player.getCurrentPosition();
